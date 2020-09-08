@@ -2,6 +2,7 @@ package com.example.stest.analysis.test.controller;
 
 import com.example.stest.analysis.StestApplication;
 import com.example.stest.analysis.test.entity.Chat;
+import com.example.stest.analysis.test.service.Test2Service;
 import com.example.stest.analysis.test.service.TestService;
 import com.example.stest.analysis.utils.MyPage;
 import com.example.stest.common.controller.BaseController;
@@ -10,6 +11,7 @@ import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
@@ -29,6 +31,10 @@ public class TestController extends BaseController {
 
     @Autowired
     private TestService testService;
+
+    @Autowired
+    @Qualifier("test2ServiceImpl")
+    private Test2Service test2Service;
 
     private static Logger logger = LoggerFactory.getLogger(StestApplication.class);
 
@@ -129,6 +135,13 @@ public class TestController extends BaseController {
         int pageIndex=1;
         int pageSize=3;
         return testService.page(msgtype,pageIndex,pageSize);
+    }
+
+    @PostMapping("/service1")
+    @ResponseBody
+    public String service1(){
+        test2Service.test();
+       return null;
     }
 
 
