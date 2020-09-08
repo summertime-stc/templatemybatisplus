@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.stest.analysis.test.dao.ChatMapper">
+	<select id="getresult"  resultType="com.example.stest.analysis.test.entity.Chat">
+		select * from Chat
+		where msg_type=#{msgtype}
+	</select>
+
+	<select id="selectorginall"  resultType="java.util.Map">
+		select *
+ 		from chat
+	</select>
+</mapper>

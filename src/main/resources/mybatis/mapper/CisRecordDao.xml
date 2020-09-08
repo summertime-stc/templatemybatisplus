@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.stest.analysis.test.dao.TestDao">
+    <!--查询所有-->
+    <select id="findAll"  resultType="java.util.Map">
+		select *
+ 		from user
+	</select>
+	<!--<select id="upload"  parameterType="Object">-->
+		<!--insert into usercontent(content) values (#{filecontent})-->
+	<!--</select>-->
+	<!--<select id="getcontent"  parameterType="int" resultType="com.example.stest.analysis.test.domain.Feedback">-->
+		<!--select content from usercontent where id = #{id}-->
+	<!--</select>-->
+
+</mapper>

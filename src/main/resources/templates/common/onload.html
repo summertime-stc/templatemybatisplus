@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Spring Boot and Thymeleaf example</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="renderer" content="webkit"/>
+</head>
+<body>
+<div th:fragment="onloadCss">
+    <head>
+        <!-- 引用主框架样式 -->
+        <link rel="stylesheet" th:href="@{/miniui/scripts/miniui/themes/default/miniui.css}"/>
+        <link rel="stylesheet" th:href="@{/miniui/scripts/miniui/themes/icons.css}"/>
+        <link rel="stylesheet" th:href="@{/css/common.css}"/>
+        <link rel="stylesheet" th:href="@{/css/layout.css}"/>
+    </head>
+</div>
+<div th:fragment="onloadJs">
+    <script th:inline="javascript">
+        var ctx = /*[[@{/}]]*/ '';// 获取contextPath
+        // console.log("contextPath:" + ctx);
+        // console.log(new Date());
+    </script>
+
+    <!-- 引用jq库 -->
+    <script th:src="@{/miniui/scripts/jquery.min.js}"></script>
+    <script th:src="@{/miniui/scripts/miniui/miniui.js}"></script>
+    <script th:src="@{/miniui/scripts/action.js}"></script>
+    <script th:src="@{/js/plugins/echarts/echarts.min.js}"></script>
+    <script th:src="@{/js/echarts-set.js}"></script>
+    <script th:src="@{/js/common/kingt.js}"></script>
+    <script th:src="@{/js/common/common.js}"></script>
+    <script th:src="@{/js/common/OperBase.js}"></script>
+
+
+    <!--<script th:src="@{/js/common/kingt.js}"></script>-->
+    <!--<script th:src="@{/js/common/common.js}"></script>-->
+
+</div>
+</body>
+</html>
